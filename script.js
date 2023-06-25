@@ -61,9 +61,11 @@ const createGameBoard = () => {
     return board;
 }
 
-const displayGameBoard = (board, KnightPosition) => {
-    const [knightX, knightY] = knightPosition;
+const displayGameBoard = (board, knightStartPos, knightEndPos) => {
+    const [knightX, knightY] = knightStartPos;
     board[knightX][knightY] = '[K]';
+    const [endX, endY] = knightEndPos;
+    board[endX][endY] = '[E]';
     for (const row of board) {
       console.log(row.join(''));
     }
@@ -71,14 +73,11 @@ const displayGameBoard = (board, KnightPosition) => {
 
 const playGame = (start, end) => {
     const board = createGameBoard();
-    displayGameBoard(board, start);
+    displayGameBoard(board, start, end);
     const path = knightMoves(start, end);
     printPath(path);
 }
 
-const start = [0, 0];
-const end = [7, 7];
+const start = [3, 0];
+const end = [7, 5];
 playGame(start, end);
-
-
-
