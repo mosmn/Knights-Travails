@@ -31,10 +31,8 @@ The above code will display the game board with the knight's starting position m
 
 ## Testing
 
-To run the test cases, you can use the following command:
+To run the test case, you can use the following command:
 
 ```shell
 node script.js
 ```
-
-The test cases cover various scenarios to ensure the correctness of the `knightMoves` function.
